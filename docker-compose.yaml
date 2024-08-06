@@ -3,6 +3,9 @@ services:
     image: nginx:latest
     container_name: nginx
     hostname: nginx
+    networks:
+      - internal
+      - external
     ports:
       - 80:80
     volumes:
@@ -13,6 +16,8 @@ services:
     container_name: element
     hostname: element
     restart: unless-stopped
+    networks:
+      - internal
     ports:
       - 8001:80
     volumes:
@@ -23,6 +28,8 @@ services:
     container_name: synapse
     hostname: synapse
     restart: unless-stopped
+    networks:
+      - internal
     ports:
       - 8002:8008
     volumes:
@@ -33,12 +40,16 @@ services:
     container_name: synapse-admin
     hostname: synapse-admin
     restart: unless-stopped
+    networks:
+      - internal
     ports:
       - "8003:80"
 
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
+    networks:
+      - internal
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /root/.docker/config.json:/config.json
@@ -46,3 +57,7 @@ services:
       WATCHTOWER_CLEANUP: true
       WATCHTOWER_ROLLING_RESTART: true
       WATCHTOWER_SCHEDULE: 0 10 * * MON
+
+networks:
+  external:
+  internal:
