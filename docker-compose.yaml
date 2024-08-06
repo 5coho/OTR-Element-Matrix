@@ -2,61 +2,68 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx
-    hostname: nginx
     networks:
       - internal
       - external
+    depends_on:
+     - helloworld
+    #  - element
+    #  - synapse
+    #  - synapse-admin
     ports:
       - 80:80
     volumes:
       - ./nginx/chat.conf:/etc/nginx/conf.d/chat.conf
 
-  element:
-    image: vectorim/element-web:latest
-    container_name: element
-    hostname: element
-    restart: unless-stopped
-    networks:
-      - internal
-    ports:
-      - 8001:80
-    volumes:
-      - ./element/element-config.json:/app/config.json
+  # element:
+  #   image: vectorim/element-web:latest
+  #   container_name: element
+  #   restart: unless-stopped
+  #   networks:
+  #     - internal
+  #   ports:
+  #     - 8001:80
+  #   volumes:
+  #     - ./element/element-config.json:/app/config.json
 
-  synapse:
-    image: matrixdotorg/synapse:latest
-    container_name: synapse
-    hostname: synapse
-    restart: unless-stopped
-    networks:
-      - internal
-    ports:
-      - 8002:8008
-    volumes:
-     - ./matrix:/data
+  # synapse:
+  #   image: matrixdotorg/synapse:latest
+  #   container_name: synapse
+  #   restart: unless-stopped
+  #   networks:
+  #     - internal
+  #   ports:
+  #     - 8002:8008
+  #   volumes:
+  #    - ./matrix:/data
 
-  synapse-admin:
-    image: awesometechnologies/synapse-admin
-    container_name: synapse-admin
-    hostname: synapse-admin
-    restart: unless-stopped
-    networks:
-      - internal
-    ports:
-      - "8003:80"
+  # synapse-admin:
+  #   image: awesometechnologies/synapse-admin
+  #   container_name: synapse-admin
+  #   restart: unless-stopped
+  #   networks:
+  #     - internal
+  #   ports:
+  #     - "8003:80"
 
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   container_name: watchtower
+  #   networks:
+  #     - internal
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - /root/.docker/config.json:/config.json
+  #   environment:
+  #     WATCHTOWER_CLEANUP: true
+  #     WATCHTOWER_ROLLING_RESTART: true
+  #     WATCHTOWER_SCHEDULE: 0 10 * * MON
+
+  helloworld:
+    image: crccheck/hello-world
+    container_name: helloworld
     networks:
       - internal
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /root/.docker/config.json:/config.json
-    environment:
-      WATCHTOWER_CLEANUP: true
-      WATCHTOWER_ROLLING_RESTART: true
-      WATCHTOWER_SCHEDULE: 0 10 * * MON
 
 networks:
   external:
