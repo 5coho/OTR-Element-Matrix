@@ -1,0 +1,16 @@
+services:
+  element:
+    image: vectorim/element-web:latest
+    restart: unless-stopped
+    ports:
+      - 8888:80
+    volumes:
+      - ./element/element-config.json:/app/config.json
+
+  synapse:
+    image: matrixdotorg/synapse:latest
+    restart: unless-stopped
+    ports:
+      - 8008:8008
+    volumes:
+     - ./matrix:/data
