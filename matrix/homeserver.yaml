@@ -9,7 +9,7 @@
 # For more information on how to configure Synapse, including a complete accounting of
 # each option, go to docs/usage/configuration/config_documentation.md or
 # https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html
-server_name: "synapse"
+server_name: "OutsideTheRing"
 pid_file: /data/homeserver.pid
 listeners:
   - port: 8008
@@ -23,13 +23,13 @@ database:
   name: sqlite3
   args:
     database: /data/homeserver.db
-log_config: "/data/m.example.com.log.config"
+log_config: "/data/OutsideTheRing.log.config"
 media_store_path: /data/media_store
 registration_shared_secret: "R#I;^ly~rrQLD0vlmcXuL.ysyXjoi=3,^w5zQn=~Qy7Zzq=Ytp"
 report_stats: false
 macaroon_secret_key: "1l+R@Zfd&D@vJF0IU7@Ef8EO#a9+VV&LR7O5aa:D_GPQRUHmcB"
 form_secret: "*SrAK#gvG6xqe#5P7:B;HZ9&PLG;uAly23fNHgKwS.deE7+hXd"
-signing_key_path: "/data/m.example.com.signing.key"
+signing_key_path: "/data/OutsideTheRing.signing.key"
 trusted_key_servers:
   - server_name: "matrix.org"
 
