@@ -5,6 +5,8 @@
 # Matrix
 /matrix/media_store
 /matrix/homeserver.db
+/matrix/homeserver.db-shm
+/matrix/homeserver.db-wal
 
 # Nginx
 
