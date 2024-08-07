@@ -25,10 +25,10 @@ database:
     database: /data/homeserver.db
 log_config: "/data/OutsideTheRing.log.config"
 media_store_path: /data/media_store
-registration_shared_secret: "R#I;^ly~rrQLD0vlmcXuL.ysyXjoi=3,^w5zQn=~Qy7Zzq=Ytp"
+registration_shared_secret: "yIlERB~DgJzod@Ztdy4;UiaV+DgjRxoUU2yscNta.wqO=GS2dV"
 report_stats: false
-macaroon_secret_key: "1l+R@Zfd&D@vJF0IU7@Ef8EO#a9+VV&LR7O5aa:D_GPQRUHmcB"
-form_secret: "*SrAK#gvG6xqe#5P7:B;HZ9&PLG;uAly23fNHgKwS.deE7+hXd"
+macaroon_secret_key: "U6s4kKGZM,BJ^JgqB&+xWl,:L0aaZT~TiuDZnWrak80B09_Rhg"
+form_secret: "j44sq;S:wwOqipGVl&uiGT_#7RAjlWod;j~BqENah:8R#zupup"
 signing_key_path: "/data/OutsideTheRing.signing.key"
 trusted_key_servers:
   - server_name: "matrix.org"
