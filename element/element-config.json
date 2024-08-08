@@ -18,12 +18,17 @@
             "https://images.unsplash.com/photo-1583473848882-f9a5bc7fd2ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "https://images.unsplash.com/photo-1664902148014-302becd9dc49?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "https://images.unsplash.com/photo-1521800641212-77d98bb90d21?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-            "https://images.unsplash.com/photo-1612179736880-d9783d10b149?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            "https://images.unsplash.com/photo-1612179736880-d9783d10b149?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1485618609651-5a8bd6efc777?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         ],
         "auth_header_logo_url": "https://example.com/image.svg",
         "auth_footer_links": [
             { "text": "Text Goes Here", "url": "www.google.com" }
         ]
+    },
+    "embedded_pages": {
+        "welcome_url": "https://www.connectionmartialarts.ca/",
+        "home_url": "https://www.connectionmartialarts.ca/"
     },
     "integrations_ui_url": "https://scalar.vector.im/",
     "integrations_rest_url": "https://scalar.vector.im/api",
@@ -54,10 +59,6 @@
             "text": "Cookie Policy"
         }
     ],
-    "sentry": {
-        "dsn": "https://029a0eb289f942508ae0fb17935bd8c5@sentry.matrix.org/6",
-        "environment": "develop"
-    },
     "privacy_policy_url": "https://element.io/cookie-policy",
     "features": {
         "threadsActivityCentre": true,

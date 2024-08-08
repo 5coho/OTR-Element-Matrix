@@ -1,16 +1,14 @@
 # Configuration file for Synapse.
 #
-# This is a YAML file: see [1] for a quick introduction. Note in particular
-# that *indentation is important*: all the elements of a list or dictionary
-# should have the same indentation.
-#
-# [1] https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
-#
 # For more information on how to configure Synapse, including a complete accounting of
 # each option, go to docs/usage/configuration/config_documentation.md or
 # https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html
+# https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html
 server_name: "OutsideTheRing"
 pid_file: /data/homeserver.pid
+web_client_location: http://0.0.0.0/
+admin_contact: 'mailto:admin@server.com'
+
 listeners:
   - port: 8008
     tls: false
@@ -19,12 +17,15 @@ listeners:
     resources:
       - names: [client, federation]
         compress: false
+
 database:
   name: sqlite3
   args:
     database: /data/homeserver.db
+
 log_config: "/data/OutsideTheRing.log.config"
 media_store_path: /data/media_store
+max_upload_size: 32M
 registration_shared_secret: "yIlERB~DgJzod@Ztdy4;UiaV+DgjRxoUU2yscNta.wqO=GS2dV"
 report_stats: false
 macaroon_secret_key: "U6s4kKGZM,BJ^JgqB&+xWl,:L0aaZT~TiuDZnWrak80B09_Rhg"
@@ -32,6 +33,32 @@ form_secret: "j44sq;S:wwOqipGVl&uiGT_#7RAjlWod;j~BqENah:8R#zupup"
 signing_key_path: "/data/OutsideTheRing.signing.key"
 trusted_key_servers:
   - server_name: "matrix.org"
+suppress_key_server_warning: true
 
+enable_registration: false
+enable_registration_without_verification: false
 
-# vim:ft=yaml
+# serve_server_wellknown: true
+require_auth_for_profile_requests: true
+allow_public_rooms_without_auth: false
+filter_timeline_limit: 400
+allow_profile_lookup_over_federation: false
+url_preview_enabled: false
+allow_guest_access: false
+encryption_enabled_by_default_for_room_type: off
+
+user_directory:
+    enabled: true
+    search_all_users: true
+    prefer_local_users: true
+    show_locked_users: false
+
+# Rate limiting
+# Registration is based off IP
+# rc_message:
+#   per_second: 3
+#   burst_count: 10000
+# rc_registration:
+#   per_second: 0.15
+#   burst_count: 2
+
