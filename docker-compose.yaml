@@ -44,6 +44,19 @@ services:
     volumes:
       - ./admin/config.json:/app/config.json
 
+  coturn:
+    image: instrumentisto/coturn:latest
+    restart: unless-stopped
+    ports:
+      - 49160-49200:49160-49200/udp
+      - 3478:3478
+      - 5349:5349
+    networks:
+      - internal
+      - external
+    volumes:
+      - ./coturn/turnserver.conf:/etc/coturn/turnserver.conf
+
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
