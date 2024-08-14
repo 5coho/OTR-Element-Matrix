@@ -2,10 +2,12 @@ services:
   nginx:
     image: nginx:latest
     container_name: nginx
+    restart: always
     networks:
       - internal
       - external
     depends_on:
+      - certbot
       - element
       - synapse
       - synapse-admin
@@ -13,12 +15,13 @@ services:
       - 8011:80
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx/certs:/etc/letsencrypt/live/
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/data:/var/www/certbot
 
   element:
     image: vectorim/element-web:latest
     container_name: element
-    restart: unless-stopped
+    restart: always
     networks:
       - internal
     volumes:
@@ -27,7 +30,7 @@ services:
   synapse:
     image: matrixdotorg/synapse:latest
     container_name: synapse
-    restart: unless-stopped
+    restart: always
     networks:
       - internal
     volumes:
@@ -36,7 +39,7 @@ services:
   synapse-admin:
     image: awesometechnologies/synapse-admin
     container_name: synapse-admin
-    restart: unless-stopped
+    restart: always
     environment:
       BASE_PATH: "/admin"
     networks:
@@ -46,7 +49,8 @@ services:
 
   coturn:
     image: instrumentisto/coturn:latest
-    restart: unless-stopped
+    container_name: coturn
+    restart: always
     ports:
       - 49160-49200:49160-49200/udp
       - 3478:3478
@@ -56,10 +60,19 @@ services:
       - external
     volumes:
       - ./coturn/turnserver.conf:/etc/coturn/turnserver.conf
+  
+  certbot:
+    container_name: certbot
+    image: certbot/certbot:latest
+    # command: certonly --webroot -w /var/www/certbot --keep-until-expiring --email ${EMAIL} -d ${DOMAIN} --agree-tos
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/data:/var/www/certbot
 
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
+    restart: unless-stopped
     networks:
       - internal
     volumes:

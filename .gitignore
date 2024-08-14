@@ -10,6 +10,9 @@
 
 # Nginx
 
+# Certbot
+/certbot
+
 # Misc
 
 

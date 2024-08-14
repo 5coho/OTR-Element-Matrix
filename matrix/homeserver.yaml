@@ -48,6 +48,11 @@ suppress_key_server_warning: true
 enable_registration: false
 enable_registration_without_verification: false
 
+# reCAPTCHA https://www.google.com/recaptcha/admin/create
+# enable_registration_captcha: true
+# recaptcha_public_key: YOUR_SITE_KEY
+# recaptcha_private_key: YOUR_SECRET_KEY
+
 # serve_server_wellknown: true
 require_auth_for_profile_requests: true
 allow_public_rooms_without_auth: false
