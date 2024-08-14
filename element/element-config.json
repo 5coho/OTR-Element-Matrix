@@ -26,10 +26,6 @@
             { "text": "Text Goes Here", "url": "www.google.com" }
         ]
     },
-    "embedded_pages": {
-        "welcome_url": "https://www.connectionmartialarts.ca/",
-        "home_url": "https://www.connectionmartialarts.ca/"
-    },
     "integrations_ui_url": "https://scalar.vector.im/",
     "integrations_rest_url": "https://scalar.vector.im/api",
     "integrations_widgets_urls": [
@@ -87,5 +83,9 @@
     "UIFeature.passwordReset": false,
     "UIFeature.TimelineEnableRelativeDates": true,
     "UIFeature.BulkUnverifiedSessionsReminder": false,
-    "UIFeature.locationSharing": true
+    "UIFeature.locationSharing": true,
+    "io.element.e2ee": {
+        "default": false,
+        "force_disable": true
+    }
 }

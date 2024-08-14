@@ -6,14 +6,14 @@ services:
       - internal
       - external
     depends_on:
-     - element
-     - synapse
-     - synapse-admin
+      - element
+      - synapse
+      - synapse-admin
     ports:
-      - 80:80
+      - 8011:80
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-
+      - ./nginx/certs:/etc/letsencrypt/live/
 
   element:
     image: vectorim/element-web:latest
@@ -21,8 +21,6 @@ services:
     restart: unless-stopped
     networks:
       - internal
-    # ports:
-    #   - 8001:80
     volumes:
       - ./element/element-config.json:/app/config.json
 
@@ -32,8 +30,6 @@ services:
     restart: unless-stopped
     networks:
       - internal
-    # ports:
-    #   - 8002:8008
     volumes:
       - ./matrix:/data
 
@@ -41,28 +37,26 @@ services:
     image: awesometechnologies/synapse-admin
     container_name: synapse-admin
     restart: unless-stopped
+    environment:
+      BASE_PATH: "/admin"
     networks:
       - internal
-    ports:
-      - 8999:80
     volumes:
       - ./admin/config.json:/app/config.json
 
-  # watchtower:
-  #   image: containrrr/watchtower
-  #   container_name: watchtower
-  #   networks:
-  #     - internal
-  #   volumes:
-  #     - /var/run/docker.sock:/var/run/docker.sock
-  #     - /root/.docker/config.json:/config.json
-  #   environment:
-  #     WATCHTOWER_CLEANUP: true
-  #     WATCHTOWER_ROLLING_RESTART: true
-  #     WATCHTOWER_SCHEDULE: 0 0 10 * * 1
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    networks:
+      - internal
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/.docker/config.json:/config.json
+    environment:
+      WATCHTOWER_CLEANUP: true
+      WATCHTOWER_ROLLING_RESTART: true
+      WATCHTOWER_SCHEDULE: 0 0 10 * * 1
 
 networks:
   external:
   internal:
-  bridge:
-    driver: bridge
