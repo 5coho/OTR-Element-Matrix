@@ -9,7 +9,8 @@ pid_file: /data/homeserver.pid
 web_client_location: http://0.0.0.0/
 admin_contact: 'mailto:admin@server.com'
 
-#TURN server for vid/voice calls
+# TURN server for vid/voice calls
+# Replace 0.0.0.0 with domain name
 turn_uris:
 - "turn:0.0.0.0:3478?transport=udp"
 - "turn:0.0.0.0:3478?transport=tcp"
@@ -32,6 +33,16 @@ database:
   name: sqlite3
   args:
     database: /data/homeserver.db
+
+# database:
+#   name: psycopg2
+#   args:
+#     user: user
+#     password: Password
+#     database: synapse
+#     host: postgres
+#     cp_min: 5
+#     cp_max: 10
 
 log_config: "/data/OutsideTheRing.log.config"
 media_store_path: /data/media_store

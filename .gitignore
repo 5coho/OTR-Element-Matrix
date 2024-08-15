@@ -13,6 +13,9 @@
 # Certbot
 /certbot
 
+# PostgreSQL
+/postgres
+
 # Misc
 
 
