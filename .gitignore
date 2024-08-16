@@ -7,6 +7,7 @@
 /matrix/homeserver.db
 /matrix/homeserver.db-shm
 /matrix/homeserver.db-wal
+/matrix/OutsideTheRing.signing.key
 
 # Nginx
 
