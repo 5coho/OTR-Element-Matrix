@@ -65,7 +65,12 @@
         "feature_group_calls": true,
         "feature_pinning": true,
         "feature_latex_maths": true,
-        "MessageComposerInput.isRichTextEnabled": true
+        "MessageComposerInput.isRichTextEnabled": true,
+        "feature_location_share_live": true,
+        "feature_disable_call_per_sender_encryption": true,
+        "feature_html_topic": true,
+        "feature_notifications": true,
+        "feature_dehydration": true
     },
     "setting_defaults": {
         "RustCrypto.staged_rollout_percent": 100

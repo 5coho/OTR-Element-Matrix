@@ -4,12 +4,20 @@
 # each option, go to docs/usage/configuration/config_documentation.md or
 # https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html
 # https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html
+
+# TODO
+# - Consent Tracking: https://matrix-org.github.io/synapse/latest/consent_tracking.html
+# - SMTP config: https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html#email
+
+# Change 0.0.0.0 -> domain name
 server_name: "OutsideTheRing"
 pid_file: /data/homeserver.pid
 web_client_location: http://0.0.0.0/
+public_baseurl: http://0.0.0.0/
 admin_contact: 'mailto:admin@server.com'
 
 # TURN server for vid/voice calls
+# https://matrix-org.github.io/synapse/latest/turn-howto.html
 # Replace 0.0.0.0 with domain name
 turn_uris:
 - "turn:0.0.0.0:3478?transport=udp"
@@ -20,6 +28,22 @@ turn_shared_secret: "SOMESECURETEXT"
 turn_user_lifetime: 1h
 turn_allow_guests: false
 
+# Registration settings
+enable_registration: false
+enable_registration_without_verification: false
+# registration_shared_secret: "yIlERB~DgJzod@Ztdy4;UiaV+DgjRxoUU2yscNta.wqO=GS2dV"
+
+# reCAPTCHA https://www.google.com/recaptcha/admin/create
+# https://matrix-org.github.io/synapse/latest/CAPTCHA_SETUP.html
+# enable_registration_captcha: true
+# recaptcha_public_key: YOUR_SITE_KEY
+# recaptcha_private_key: YOUR_SECRET_KEY
+
+# Retention policy
+default_policy:
+  min_lifetime: 1d
+  max_lifetime: 90d
+
 listeners:
   - port: 8008
     tls: false
@@ -29,6 +53,8 @@ listeners:
       - names: [client, federation]
         compress: false
 
+# Change Database option below if using postgres
+# Ideally use a dedicated server not a container
 database:
   name: sqlite3
   args:
@@ -44,10 +70,20 @@ database:
 #     cp_min: 5
 #     cp_max: 10
 
+user_directory:
+    enabled: true
+    search_all_users: true
+    prefer_local_users: true
+    show_locked_users: false
+
+# URL Previews
+url_preview_enabled: true
+url_preview_ip_range_blacklist:
+  - '5.136.0.0/13'
+
 log_config: "/data/OutsideTheRing.log.config"
 media_store_path: /data/media_store
 max_upload_size: 32M
-# registration_shared_secret: "yIlERB~DgJzod@Ztdy4;UiaV+DgjRxoUU2yscNta.wqO=GS2dV"
 report_stats: false
 macaroon_secret_key: "U6s4kKGZM,BJ^JgqB&+xWl,:L0aaZT~TiuDZnWrak80B09_Rhg"
 form_secret: "j44sq;S:wwOqipGVl&uiGT_#7RAjlWod;j~BqENah:8R#zupup"
@@ -55,32 +91,13 @@ signing_key_path: "/data/OutsideTheRing.signing.key"
 trusted_key_servers:
   - server_name: "matrix.org"
 suppress_key_server_warning: true
-
-enable_registration: false
-enable_registration_without_verification: false
-
-# reCAPTCHA https://www.google.com/recaptcha/admin/create
-# enable_registration_captcha: true
-# recaptcha_public_key: YOUR_SITE_KEY
-# recaptcha_private_key: YOUR_SECRET_KEY
-
 # serve_server_wellknown: true
 require_auth_for_profile_requests: true
 allow_public_rooms_without_auth: false
 filter_timeline_limit: 400
-allow_profile_lookup_over_federation: false
+allow_profile_lookup_over_federation: true
 allow_guest_access: false
 encryption_enabled_by_default_for_room_type: off
-
-url_preview_enabled: true
-url_preview_ip_range_blacklist:
-  - '5.136.0.0/13'
-
-user_directory:
-    enabled: true
-    search_all_users: true
-    prefer_local_users: true
-    show_locked_users: false
 
 # Rate limiting
 # Registration is based off IP
