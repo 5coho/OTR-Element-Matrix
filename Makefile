@@ -13,7 +13,7 @@ help:  ##		Display this help
 fresh_install: ##	Run the app locally
 	@docker compose up -d
 
-generate_homeserver: ## Generates homeserver.yaml (not really needed)
+generate_homeserver: ## Generates homeserver.yaml (not needed)
 	@sudo docker run -it --rm \
     -v "./matrix:/data" \
     -e SYNAPSE_SERVER_NAME=OutsideTheRing \

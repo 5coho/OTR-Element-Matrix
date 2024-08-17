@@ -13,7 +13,6 @@
 server_name: "OutsideTheRing"
 pid_file: /data/homeserver.pid
 web_client_location: http://0.0.0.0/
-public_baseurl: http://0.0.0.0/
 admin_contact: 'mailto:admin@server.com'
 
 # TURN server for vid/voice calls
