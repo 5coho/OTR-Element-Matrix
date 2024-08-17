@@ -95,5 +95,9 @@ services:
   #     POSTGRES_DB: synapse
 
 networks:
+  default:
+    name: otr-default-net
   external:
+    name: otr-external-net
   internal:
+    name: otr-internal-net

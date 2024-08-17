@@ -31,7 +31,7 @@ turn_allow_guests: false
 # Registration settings
 enable_registration: false
 enable_registration_without_verification: false
-# registration_shared_secret: "yIlERB~DgJzod@Ztdy4;UiaV+DgjRxoUU2yscNta.wqO=GS2dV"
+registration_shared_secret: "b&dWKbH^VX+;&rMzQ+ObZuKq@~yj@pCUND57kfQXwg;Nqp^ga="
 
 # reCAPTCHA https://www.google.com/recaptcha/admin/create
 # https://matrix-org.github.io/synapse/latest/CAPTCHA_SETUP.html
@@ -85,8 +85,8 @@ log_config: "/data/OutsideTheRing.log.config"
 media_store_path: /data/media_store
 max_upload_size: 32M
 report_stats: false
-macaroon_secret_key: "U6s4kKGZM,BJ^JgqB&+xWl,:L0aaZT~TiuDZnWrak80B09_Rhg"
-form_secret: "j44sq;S:wwOqipGVl&uiGT_#7RAjlWod;j~BqENah:8R#zupup"
+macaroon_secret_key: "At,rJNu;6Crq5#18V.UKLUNG1dfRiMRJGezqbXnUZA~pD=abPW"
+form_secret: "gUDCy9g,D+et@:dSkjQIOXa=_nMIjQ#=rIN8D2pfs#*IxKtzhY"
 signing_key_path: "/data/OutsideTheRing.signing.key"
 trusted_key_servers:
   - server_name: "matrix.org"
