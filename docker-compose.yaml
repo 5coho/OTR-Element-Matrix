@@ -58,6 +58,8 @@ services:
     networks:
       - internal
       - external
+    depends_on:
+      - nginx
     volumes:
       - ./coturn/turnserver.conf:/etc/coturn/turnserver.conf
   
