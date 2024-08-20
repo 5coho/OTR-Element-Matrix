@@ -27,6 +27,35 @@ turn_shared_secret: "SOMESECURETEXT"
 turn_user_lifetime: 1h
 turn_allow_guests: false
 
+# SMTP and email notifications messages 
+email:
+  smtp_host: mail.server
+  smtp_port: 587
+  smtp_user: "exampleusername"
+  smtp_pass: "examplepassword"
+  force_tls: true
+  require_transport_security: true
+  enable_tls: true
+  notif_from: "%(app)s <no-reply@example.com>"
+  app_name: my_branded_matrix_server
+  enable_notifs: true
+  notif_for_new_users: false
+  client_base_url: "http://localhost/riot"
+  validation_token_lifetime: 15m
+  invite_client_location: https://app.element.io
+
+  subjects:
+    message_from_person_in_room: "[%(app)s] You have a message on %(app)s from %(person)s in the %(room)s room..."
+    message_from_person: "[%(app)s] You have a message on %(app)s from %(person)s..."
+    messages_from_person: "[%(app)s] You have messages on %(app)s from %(person)s..."
+    messages_in_room: "[%(app)s] You have messages on %(app)s in the %(room)s room..."
+    messages_in_room_and_others: "[%(app)s] You have messages on %(app)s in the %(room)s room and others..."
+    messages_from_person_and_others: "[%(app)s] You have messages on %(app)s from %(person)s and others..."
+    invite_from_person_to_room: "[%(app)s] %(person)s has invited you to join the %(room)s room on %(app)s..."
+    invite_from_person: "[%(app)s] %(person)s has invited you to chat on %(app)s..."
+    password_reset: "[%(server_name)s] Password reset"
+    email_validation: "[%(server_name)s] Validate your email"
+
 # Registration settings
 enable_registration: false
 enable_registration_without_verification: false

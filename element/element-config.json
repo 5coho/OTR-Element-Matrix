@@ -23,7 +23,8 @@
         ],
         "auth_header_logo_url": "https://example.com/image.svg",
         "auth_footer_links": [
-            { "text": "Text Goes Here", "url": "www.google.com" }
+            { "text": "Link goes here", "url": "www.google.com" },
+            { "text": "Link goes here", "url": "www.youtube.com" }
         ]
     },
     "integrations_ui_url": "https://scalar.vector.im/",
