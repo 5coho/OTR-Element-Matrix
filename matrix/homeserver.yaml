@@ -38,7 +38,7 @@ email:
   enable_tls: true
   notif_from: "%(app)s <no-reply@example.com>"
   app_name: my_branded_matrix_server
-  enable_notifs: true
+  enable_notifs: false
   notif_for_new_users: false
   client_base_url: "http://localhost/riot"
   validation_token_lifetime: 15m
@@ -59,6 +59,8 @@ email:
 # Registration settings
 enable_registration: false
 enable_registration_without_verification: false
+# registrations_require_3pid:
+#   - email
 registration_shared_secret: "b&dWKbH^VX+;&rMzQ+ObZuKq@~yj@pCUND57kfQXwg;Nqp^ga="
 
 # reCAPTCHA https://www.google.com/recaptcha/admin/create

@@ -13,7 +13,6 @@ Have to add Diagrams
 
 ### TODOs
  - Different compose file and nginx config for running locally, or template nginx container with appropriate env vars 
- - SMTP config: [Docs](https://matrix-org.github.io/synapse/latest/usage/configuration/config_documentation.html#email)
  - Consent Tracking: [Docs](https://matrix-org.github.io/synapse/latest/consent_tracking.html)
  - Custom Home: [Docs](https://github.com/element-hq/element-web/blob/develop/docs/custom-home.md)
  - Privacy Policy and TOS

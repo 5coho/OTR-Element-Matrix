@@ -69,9 +69,6 @@ services:
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/data:/var/www/certbot
-    environment:
-      EMAIL: test@example.com
-      DOMAIN: www.example.com
     # command: certonly --webroot -w /var/www/certbot --keep-until-expiring --email ${EMAIL} -d ${DOMAIN} --agree-tos
 
   watchtower:
