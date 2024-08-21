@@ -61,6 +61,7 @@
         "threadsActivityCentre": true,
         "feature_video_rooms": true,
         "feature_new_room_decoration_ui": true,
+        "feature_custom_themes": true,
         "feature_element_call_video_rooms": true,
         "feature_report_to_moderators": true,
         "feature_group_calls": true,
@@ -72,9 +73,6 @@
         "feature_html_topic": true,
         "feature_notifications": true,
         "feature_dehydration": true
-    },
-    "setting_defaults": {
-        "RustCrypto.staged_rollout_percent": 100
     },
     "element_call": {
         "url": "https://call.element.dev"
@@ -89,5 +87,176 @@
     "UIFeature.passwordReset": false,
     "UIFeature.TimelineEnableRelativeDates": true,
     "UIFeature.BulkUnverifiedSessionsReminder": false,
-    "UIFeature.locationSharing": true
+    "UIFeature.locationSharing": true,
+    "setting_defaults": {
+        "RustCrypto.staged_rollout_percent": 100,
+        "custom_themes": [
+            {
+                "name": "Discord Dark",
+                "is_dark": true,
+                "colors": {
+                    "accent-color": "#747ff4",
+                    "accent": "#747ff4",
+                    "primary-color": "#00aff4",
+                    "warning-color": "#faa81ad9",
+                    "alert": "#faa81ad9",
+            
+                    "sidebar-color": "#202225",
+                    "roomlist-background-color": "#2f3136",
+                    "roomlist-text-color": "#dcddde",
+                    "roomlist-text-secondary-color": "#8e9297",
+                    "roomlist-highlights-color": "#4f545c52",
+                    "roomlist-separator-color": "#40444b",
+            
+                    "timeline-background-color": "#36393f",
+                    "timeline-text-color": "#dcddde",
+                    "secondary-content": "#dcddde",
+                    "tertiary-content": "#dcddde",
+                    "timeline-text-secondary-color": "#b9bbbe",
+                    "timeline-highlights-color": "#04040512",
+            
+                    "reaction-row-button-selected-bg-color": "#4752c4",
+                    "menu-selected-color": "#4752c4",
+                    "focus-bg-color": "#4752c4",
+                    "room-highlight-color": "#4752c4",
+                    "other-user-pill-bg-color": "#4752c4",
+                    "togglesw-off-color": "#72767d"
+                }
+            },
+            {
+                "name": "Monokai Pro",
+                "is_dark": true,
+                "colors": {
+                  "accent-color": "#fff1f3",
+                  "primary-color": "#f38d70",
+                  "warning-color": "#fd6883",
+                  "sidebar-color": "#2d2a2e",
+                  "roomlist-background-color": "#221f22",
+                  "roomlist-text-color": "#fff1ff",
+                  "roomlist-text-secondary-color": "#f9cc6c",
+                  "roomlist-highlights-color": "#3b394a",
+                  "roomlist-separator-color": "#2D2a2e",
+                  "timeline-background-color": "#2D2a2e",
+                  "timeline-text-color": "#fff1ff",
+                  "secondary-content": "#fff1f3",
+                  "tertiary-content": "#fff1f3",
+                  "quinary-content": "#221f22",
+                  "timeline-text-secondary-color": "#fff1ff",
+                  "timeline-highlights-color": "#00000030",
+                  "reaction-row-button-selected-bg-color": "#adda78",
+                  "menu-selected-color": "#f9cc6c",
+                  "icon-button-color": "#f9cc6c",
+                  "accent": "#fd6883",
+                  "alert": "#fd6883",
+                  "username-colors": [
+                    "#cc241d",
+                    "#689d6a",
+                    "#f9cc6c",
+                    "#b16286",
+                    "#85dacc",
+                    "#adda78",
+                    "#a89984",
+                    "#f38d70"
+                  ],
+                  "avatar-background-colors": ["#458588", "#b16286", "#adda78"]
+                }
+              },
+              {
+                "name": "Nord light theme",
+                "is_dark": false,
+                "colors": {
+                    "accent-color": "#a3be8c",
+                    "primary-color": "#5e81ac",
+                    "warning-color": "#bf616a",
+            
+                    "sidebar-color": "#d8dee9",
+                    "roomlist-background-color": "#e5e9f0",
+                    "roomlist-text-color": "#d08770",
+                    "roomlist-text-secondary-color": "#3b4252",
+                    "roomlist-highlights-color": "#eceff4",
+                    "roomlist-separator-color": "#eceff4",
+            
+                    "timeline-background-color": "#eceff4",
+                    "timeline-text-color": "#2e3440",
+                    "secondary-content": "#2e3440",
+                    "tertiary-content": "#2e3440",
+                    "timeline-text-secondary-color": "#3b4252",
+                    "timeline-highlights-color": "#e5e9f0",
+                    "reaction-row-button-selected-bg-color": "#bf616a"
+                }
+            },
+            {
+                "name": "Selenized light theme",
+                "is_dark": false,
+                "colors": {
+                    "accent-color": "#ad8900",
+                    "primary-color": "#009c8f",
+                    "warning-color": "#d2212d",
+            
+                    "sidebar-color": "#d5cdb6",
+                    "roomlist-background-color": "#ece3cc",
+                    "roomlist-text-color": "#c25d1e",
+                    "roomlist-text-secondary-color": "#000000",
+                    "roomlist-highlights-color": "#fbf3db",
+                    "roomlist-separator-color": "#fbf3db",
+            
+                    "timeline-background-color": "#fbf3db",
+                    "timeline-text-color": "#000000",
+                    "secondary-content": "#000000",
+                    "tertiary-content": "#000000",
+                    "timeline-text-secondary-color": "#777777",
+                    "timeline-highlights-color": "#ece3cc",
+                    "reaction-row-button-selected-bg-color": "#4695f7"
+                }
+            },
+            {
+                "name": "Selenized dark theme",
+                "is_dark": true,
+                "colors": {
+                    "accent-color": "#41c7b9",
+                    "primary-color": "#4695f7",
+                    "warning-color": "#fa5750",
+            
+                    "sidebar-color": "#103c48",
+                    "roomlist-background-color": "#184956",
+                    "roomlist-text-color": "#dbb32d",
+                    "roomlist-text-secondary-color": "#FFFFFF",
+                    "roomlist-highlights-color": "#2d5b69",
+                    "roomlist-separator-color": "#2d5b69",
+            
+                    "timeline-background-color": "#2d5b69",
+                    "timeline-text-color": "#FFFFFF",
+                    "secondary-content": "#FFFFFF",
+                    "tertiary-content": "#FFFFFF",
+                    "timeline-text-secondary-color": "#72898f",
+                    "timeline-highlights-color": "#184956",
+                    "reaction-row-button-selected-bg-color": "#4695f7"
+                }
+            },
+            {
+                "name": "Selenized black theme",
+                "is_dark": true,
+                "colors": {
+                    "accent-color": "#70b433",
+                    "primary-color": "#4695f7",
+                    "warning-color": "#ed4a46",
+            
+                    "sidebar-color": "#181818",
+                    "roomlist-background-color": "#252525",
+                    "roomlist-text-color": "#ffffff",
+                    "roomlist-text-secondary-color": "#b9b9b9",
+                    "roomlist-highlights-color": "#3b3b3b",
+                    "roomlist-separator-color": "#121212",
+            
+                    "timeline-background-color": "#181818",
+                    "timeline-text-color": "#FFFFFF",
+                    "secondary-content": "#FFFFFF",
+                    "tertiary-content": "#FFFFFF",
+                    "timeline-text-secondary-color": "#777777",
+                    "timeline-highlights-color": "#252525",
+                    "reaction-row-button-selected-bg-color": "#4695f7"
+                }
+            }
+        ]
+    }
 }
