@@ -87,6 +87,19 @@ services:
       WATCHTOWER_ROLLING_RESTART: true
       WATCHTOWER_SCHEDULE: 0 0 10 * * 1
 
+  # glances:
+  #   image: nicolargo/glances:latest-full
+  #   container_name: glances
+  #   ports:
+  #     - 61999:61208
+  #   networks:
+  #     - internal
+  #     - external
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   environment:
+  #     GLANCES_OPT: "-w"
+
   # postgres:
   #   image: postgres:16.4-alpine
   #   container_name: postgres

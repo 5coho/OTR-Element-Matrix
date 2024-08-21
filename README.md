@@ -22,7 +22,11 @@ Element-Matrix  chat template for spinning up a simple server.
 12. Restart `nginx`.
 13. Run `make gen_user` to create admin account.
 
-**NOTE**: Use `watchtower` at your own risk.
+**NOTES**: 
+- Use `watchtower` at your own risk.
+- Ideally, use a dedicated PostgreSQL server.
+- Pin image versions instead of `latest' and update manually.
+- If using `Glances` for monitoring, ensure your firewall only accepts connections from a specific source. Also, tls/ssl.
 
 ### Running Locally
 1. Install Docker, Git, and Make.
@@ -37,9 +41,7 @@ Element-Matrix  chat template for spinning up a simple server.
  - Consent Tracking: [Docs](https://matrix-org.github.io/synapse/latest/consent_tracking.html)
  - Custom Home: [Docs](https://github.com/element-hq/element-web/blob/develop/docs/custom-home.md)
  - Privacy Policy and TOS
- - Glances for monitoring
  - Linode stack script
- - Kubernetes
 
 ### Useful Links
 
@@ -47,3 +49,6 @@ Element-Matrix  chat template for spinning up a simple server.
 | :--- | :--- |
 | Matrix Docs | https://matrix-org.github.io/synapse/latest/ |
 | Element Docs | https://github.com/element-hq/element-web/tree/develop/docs |
+| Element Local | http://localhost/ |
+| Matrix Local | http://localhost/_matrix/static |
+| Matrix Admin Local | http://localhost/admin/ |
