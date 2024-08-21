@@ -18,14 +18,16 @@ Element-Matrix  chat template for spinning up a simple server.
 8. Change `server_name` and cert paths in `./nginx/default.conf`.
 9. Update the docker compose file `certbot` command with email and domain name.
 10. Run `make fresh_install`.
-11. Run `make gen_user` to create admin account.
+11. After the LetsEncrypt cert is generated, Uncomment the 443 block in `./nginx/default.conf`.
+12. Restart `nginx`.
+13. Run `make gen_user` to create admin account.
 
 **NOTE**: Use `watchtower` at your own risk.
 
 ### Running Locally
 1. Install Docker, Git, and Make.
 2. In `docker-compose.yaml` comment `watchtower` and `certbot`.
-3. In `./nginx/default.conf`, comment ssl cert paths and change the server listening on `443` to `80`.
+3. Modify `./nginx/default.conf`, comment http server block and uncomment https server block then change 443 -> 80.
 4. `make fresh_install`.
 5. Run `make gen_user` to create admin account.
 
