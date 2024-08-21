@@ -7,8 +7,8 @@ CERTBOT_CONTAINER = certbot
 WATCHTOWER_CONTAINER = watchtower
 POSTGRES_CONTAINER = postgres
 
-EMAIL = < email goes here for cert >
-DOMAIN = < domaine name goes here >
+EMAIL = <email goes here for cert>
+DOMAIN = <domaine name goes here>
 
 help:  ##		Display this help
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n\nTargets:\n"} /^[a-zA-Z0-9_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
@@ -43,7 +43,10 @@ gen_user: ##		Create a Synapse User
 
 # ------------------- CERTS -------------------------------------------
 gen_cert: ##		Generate an TLS/SSL cert using certbot
-	@docker compose run ${CERTBOT_CONTAINER} certonly --webroot -w /var/www/certbot --keep-until-expiring --email ${EMAIL} -d ${DOMAIN} --agree-tos
+	@docker compose up ${CERTBOT_CONTAINER}
+
+gen_cert_dryrun: ##		Generate an TLS/SSL cert using certbot
+	@docker compose run ${CERTBOT_CONTAINER} certonly --webroot --webroot-path /var/www/certbot --dry-run --keep-until-expiring --email ${EMAIL} -d ${DOMAIN} --agree-tos
 
 renew_cert: ##		Renew lets encrypt cert
 	@docker compose run ${CERTBOT_CONTAINER} renew -d ${DOMAIN}

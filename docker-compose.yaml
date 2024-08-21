@@ -7,7 +7,6 @@ services:
       - internal
       - external
     depends_on:
-      - certbot
       - element
       - synapse
       - synapse-admin
@@ -67,10 +66,12 @@ services:
   certbot:
     container_name: certbot
     image: certbot/certbot:latest
+    depends_on:
+      - nginx
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/data:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --keep-until-expiring --email ${EMAIL} -d ${DOMAIN} --agree-tos
+    command: certonly --webroot --webroot-path /var/www/certbot --keep-until-expiring --email ${EMAIL} -d ${DOMAIN_NAME} --agree-tos
 
   watchtower:
     image: containrrr/watchtower
