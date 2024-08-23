@@ -41,7 +41,7 @@ Element-Matrix  chat template for spinning up a simple server.
  - Consent Tracking: [Docs](https://matrix-org.github.io/synapse/latest/consent_tracking.html)
  - Custom Home: [Docs](https://github.com/element-hq/element-web/blob/develop/docs/custom-home.md)
  - Privacy Policy and TOS
- - Linode stack script
+ - Linode stack script and/or initialization script
 
 ### Useful Links
 
