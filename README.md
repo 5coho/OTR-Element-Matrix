@@ -26,7 +26,7 @@ Element-Matrix  chat template for spinning up a simple server.
 - Use `watchtower` at your own risk.
 - Ideally, use a dedicated PostgreSQL server.
 - Pin image versions instead of `latest' and update manually.
-- If using `Glances` for monitoring, ensure your firewall only accepts connections from a specific source. Also, tls/ssl.
+- If using `Glances` for monitoring, ensure your firewall only accepts connections from a specific source, use a VPC, TLS/SSL etc. Also, Glances will use much more outbound Networking traffic so be aware of your cloud providers polices.
 
 ### Running Locally
 1. Install Docker, Git, and Make.

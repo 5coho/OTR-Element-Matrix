@@ -64,6 +64,7 @@ enable_registration_without_verification: false
 registration_shared_secret: "b&dWKbH^VX+;&rMzQ+ObZuKq@~yj@pCUND57kfQXwg;Nqp^ga="
 
 # reCAPTCHA https://www.google.com/recaptcha/admin/create
+# hcaptcha https://www.hcaptcha.com/
 # https://matrix-org.github.io/synapse/latest/CAPTCHA_SETUP.html
 # enable_registration_captcha: true
 # recaptcha_public_key: YOUR_SITE_KEY
